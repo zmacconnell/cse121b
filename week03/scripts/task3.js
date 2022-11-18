@@ -10,9 +10,9 @@ function add(number1, number2) {
 
 // Step 3: Step 3: Using function declaration, define another function named addNumbers that gets the values of two HTML form controls with IDs of addend1 and addend2. Pass them to the add function
 function addNumbers() {
-    const value1 = parseInt(document.querySelector("#addend1").value);
-    const value2 = parseInt(document.querySelector("#addend2").value);
-    const result = add(value1, value2);
+    let value1 = parseInt(document.querySelector("#addend1").value);
+    let value2 = parseInt(document.querySelector("#addend2").value);
+    let result = add(value1, value2);
     document.querySelector("#sum").value = result;
 }
 // Step 4: Assign the return value to an HTML form element with an ID of sum
@@ -21,10 +21,10 @@ function addNumbers() {
 document.querySelector("#addNumbers").addEventListener("click", addNumbers);
 
 // Step 6: Using function expressions, repeat Steps 1-5 with new functions named subtract and subtractNumbers and HTML form controls with IDs of minuend, subtrahend, difference and subtractNumbers
-function sub(number1, number2) {
+const sub = function (number1, number2) {
     return number1 - number2;
 }
-function subNumbers() {
+const subNumbers = function () {
     const value1 = parseInt(document.querySelector("#minuend").value);
     const value2 = parseInt(document.querySelector("#subtrahend").value);
     const result = sub(value1, value2);
@@ -32,10 +32,11 @@ function subNumbers() {
 }
 document.querySelector("#subtractNumbers").addEventListener("click", subNumbers);
 
-function mul(number1, number2) {
+// Step 7: Using arrow functions, repeat Steps 1-5 with new functions named multiply and mulitplyNumbers and HTML form controls with IDs of factor1, factor2, product and multiplyNumbers
+const mul = (number1, number2) => {
     return number1 * number2;
 }
-function mulNumbers() {
+const mulNumbers =() => {
     const value1 = parseInt(document.querySelector("#factor1").value);
     const value2 = parseInt(document.querySelector("#factor2").value);
     const result = mul(value1, value2);
@@ -43,6 +44,7 @@ function mulNumbers() {
 }
 document.querySelector("#multiplyNumbers").addEventListener("click", mulNumbers);
 
+// Step 8: Using any of the three function declaration types, repeat Steps 1-5 with new functions named divide and divideNumbers and HTML form controls with IDs of dividend, divisor, quotient and divideNumbers
 function div(number1, number2) {
     return number1 / number2;
 }
@@ -53,10 +55,6 @@ function divNumbers() {
     document.querySelector("#quotient").value = result;
 }
 document.querySelector("#divideNumbers").addEventListener("click", divNumbers);
-
-// Step 7: Using arrow functions, repeat Steps 1-5 with new functions named multiply and mulitplyNumbers and HTML form controls with IDs of factor1, factor2, product and multiplyNumbers
-
-// Step 8: Using any of the three function declaration types, repeat Steps 1-5 with new functions named divide and divideNumbers and HTML form controls with IDs of dividend, divisor, quotient and divideNumbers
 
 // Step 9: Test all of the mathematical functionality of the task3.html page.
 
