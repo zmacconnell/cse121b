@@ -1,0 +1,4 @@
+The project idea I have had so far is related to VIN 
+decoding using the NHTSA's API. I am not sure how well 
+that will go and I might need to adjust it somewhat, 
+but that's what I have so far. 
