@@ -2,7 +2,7 @@ const startDecode = function () {
   var vin = document.querySelector("#vinInput").value
 
   if (vin.length == 17) {
-    CheckVin(vin)
+    getNHTSADataByVIN(vin)
   }
 }
 document.querySelector("#decode").addEventListener("click", startDecode);
