@@ -7,28 +7,29 @@ const startDecode = function () {
 }
 document.querySelector("#decode").addEventListener("click", startDecode);
 
-// function getNHTSADataByVIN (param_vin) {
-//   $.ajax({
-//     url: "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVINValuesBatch/",
-//     type: "POST",
-//     data: { format: "json", data: param_vin },
-//     dataType: "json",
-//     success: function(result)
-//     {
-//       console.log(result);
-//       displayNHTSAResults(result);
-//     },
-//     error: function(xhr, ajaxOptions, thrownError)
-//     {
-//         console.log(xhr.status)
-//         console.log(thrownError)
-//     }
-//   })
-// }
+var empty = null
 
-function displayNHTSAResults (param_data) {
+function getNHTSADataByVIN (param_vin) {
+  $.ajax({
+    url: "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVINValuesBatch/",
+    type: "POST",
+    data: { format: "json", data: param_vin },
+    dataType: "json",
+    success: function(result)
+    {
+      console.log(result);
+      DisplayResults(result);
+    },
+    error: function(xhr, ajaxOptions, thrownError)
+    {
+        console.log(xhr.status)
+        console.log(thrownError)
+    }
+  })
+}
+
+function DisplayResults(param_data) {
   var output_text = ""
-
   for (var i = 0; i < param_data.Results.length; i++) {
     var result = param_data.Results[i]
 
@@ -38,13 +39,5 @@ function displayNHTSAResults (param_data) {
       }
     }
   }
-
-  document.getElementById("#txt_results").value = output_text
-}
-
-async function CheckVin(vin) {
-  var response = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`);
-  let result = await response.json();
-  console.log(result);
-  displayNHTSAResults(result);
+  document.getElementById("txt_results").value = output_text
 }
