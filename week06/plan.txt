@@ -2,3 +2,8 @@ The project idea I have had so far is related to VIN
 decoding using the NHTSA's API. I am not sure how well 
 that will go and I might need to adjust it somewhat, 
 but that's what I have so far. 
+
+
+Lousy website: https://vpic.nhtsa.dot.gov/api/
+Best help so far: https://stackoverflow.com/questions/51734389/integrating-a-vin-decoder-api
+Cruddy Microsoft page: https://learn.microsoft.com/en-us/connectors/nhtsavpicip/#decode-vin
