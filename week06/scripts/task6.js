@@ -33,7 +33,7 @@ function displayNHTSAResults (param_data) {
     var result = param_data.Results[i]
 
     for (var prop in result) {
-      if (result.hasOwnProperty(prop) && result[prop] !== null) {
+      if (result.hasOwnProperty(prop) && result[prop] !== "") {
         output_text += prop + ": " + result[prop] + "\n"
       }
     }
